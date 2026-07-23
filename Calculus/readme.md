@@ -67,6 +67,26 @@
 
 </details>
 
+<details>
+<summary><strong>4. Visualizing the Chain Rule and Product Rule</strong></summary>
+
+**Key Idea**: The chain rule and product rule aren't arbitrary formulas to memorize — both fall out naturally once you picture what's actually changing, one using number lines, the other using an area model.
+
+**Chain Rule — Number Line Picture**:
+- Think of a composed function h(x) = g(f(x)) as two number lines wired together: a nudge dx on the input line pushes f(x) by df, which in turn pushes g by dg.
+- Each stage scales the nudge by its own local derivative, so the total scaling factor is the product of the two: dg/dx = dg/df · df/dx.
+- This is the chain rule: **h'(x) = g'(f(x)) · f'(x)** — derivatives "chain" together because each step just rescales the tiny nudge from the previous one.
+
+**Product Rule — Area Model**:
+- Picture two quantities f(x) and g(x) as the side lengths of a rectangle, so the product f(x)·g(x) is its area.
+- Nudging x by dx changes the rectangle slightly: one side grows by df, the other by dg.
+- The change in area is approximately two thin strips — one of area f(x)·dg, the other of area g(x)·df — the corner piece (df·dg) is negligible since it shrinks much faster than dx.
+- This gives the product rule: **d/dx [f(x)g(x)] = f(x)g'(x) + g(x)f'(x)**.
+
+**Intuition**: Both rules describe how a tiny change ripples through a compound structure — a chain of dependent quantities (chain rule) or two dimensions multiplying together (product rule). Seeing them as geometry, not algebra to memorize, makes them easy to re-derive from scratch.
+
+</details>
+
 ---
 
 ## Some useful functions of sympy library
@@ -122,5 +142,3 @@ Substituting values
 expr = x**2 + 3*x
 expr.subs(x, 5)     # plug in x=5, get an actual number
 ```
-
-
